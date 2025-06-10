@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Motion Detection & Face Recognition System</h1>
+        </header>
+        
+        <main>
+            <div class="video-container">
+                <img id="video-feed" src="/video_feed" alt="Video Feed">
+                <div class="overlay">
+                    <div id="status-indicator" class="status-indicator monitoring">
+                        <span id="status-text">Monitoring</span>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat">
+                            <i class="fas fa-user-friends"></i>
+                            <span id="head-count">0</span> Heads
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-video"></i>
+                            <span id="recording-status">Not Recording</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-running"></i>
+                            <span id="motion-status">No Motion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls-panel">
+                <h2>System Controls</h2>
+                <div class="controls">
+                    <button id="start-btn" class="btn"><i class="fas fa-play"></i> Start</button>
+                    <button id="stop-btn" class="btn"><i class="fas fa-stop"></i> Stop</button>
+                    <div class="settings">
+                        <div class="setting">
+                            <label for="motion-threshold">Motion Sensitivity:</label>
+                            <input type="range" id="motion-threshold" min="10" max="100" value="50">
+                        </div>
+                        <div class="setting">
+                            <label for="min-area">Minimum Object Size:</label>
+                            <input type="range" id="min-area" min="500" max="10000" value="2000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recordings-panel">
+                <h2>Recorded Videos</h2>
+                <button id="refresh-btn" class="btn"><i class="fas fa-sync"></i> Refresh</button>
+                <div class="recordings-list" id="recordings-list">
+                    <!-- Recordings will be populated here -->
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Motion Detection System &copy; 2025</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
